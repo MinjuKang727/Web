@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // 형변환
+        // paseInt() : 문자열을 숫자(정수)로 변환
+        // parseFloat() : 문자열을 숫자(실수)로 변환
+        // Number() : 다른 자료형을 숫자형(정수&실수)으로 변환
+        // toString(), String() : 숫자를 문자열로 변환
+
+        let pi = '3.14';
+        console.log(pi);
+        // 1. 문자 >> 실수 : parseFloat()
+        console.log(pi,'를 실수로 형변환 by parseFloat :',parseFloat(pi));
+        
+        // 2. 문자 >> 정수 : parseInt()
+        let intNum = parseInt(pi);
+        console.log(pi,'를 정수로 형변환 by parseInt :',intNum);
+
+        // 3. 문자 >> 숫자 : Number()
+        // 문자열일때의 꼴을 그대로 유지한 채로 숫자로 변환
+        let num1 = '1.234', num2 = '3';
+        console.log(num1,'을 숫자로 형변환 by Number :',Number(num1));
+        console.log(num2,'을 숫자로 형변환 by Number :',Number(num2));
+
+        // 4. 숫자 >> 문자 
+        // String()
+        let num3 = 45;
+        console.log(num3,'를 문자로 형변환 by String : ' + String(num3));
+        // toString
+        console.log(num3,'를 문자로 형변환 by toString : ' + num3.toString());
+    </script>
+</body>
+</html>

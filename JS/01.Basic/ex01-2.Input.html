@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+    // 2. 입력
+    // 2-1. 입력창을 통한 입력문 prompt
+    // prompt(출력질문, (입력창에 출력될 값: 생략 가능))
+    // 입력 값의 return 타입 >> 문자열(String) : 3 == '3', '라멘'
+    let dinner = prompt("오늘 적녁 뭐 드실래요?", '마라탕');
+    console.log(dinner);
+
+    // 2-2확인 출력 질문 confirm
+    // return 값 >> boolean  확인:True/ 취소:False
+    let dinner2 = confirm('저랑 오늘 저녁 드실래요?');
+    console.log(dinner2);
+    // 3. 변수 : 데이터를 담을 공간
+    // var 변수명 = 대입값;
+    // var num = 3;  : 숫자
+    // var abc = '가나다' :문자열
+
+    // 웹은 자료형을 구분해 줌 : 숫자, boolean >> 파란색/ 문자열 >> 검은색
+
+    // 3-1. var 키워드 : 제일 많이 볼 수 있음(open API)
+    // 재 선언 가능  >> 문제 발생 : 프로젝트 진행시, 변수를 재선언해버리면 코드가 꼬임
+        var num = 1; 
+        var num = 3;   // 에러 안남
+    // 재 할당 가능
+        var num = 3;
+        num = 5;       // 에러 안남
+    
+    // 3-2. let 키워드 : 제일 많이 사용할 키워드
+    // 재 선언 불가능
+    let num2 = 1;
+    //let num2 = 2    //에러 발생
+    // 재 할당 가능
+    num2 = 3;   
+    
+    // 3-3. const 키워드 : 변하지 않아야 할 변수에 많이 사용
+    // 재 선언 불가능, 재 할당 불가능
+
+
+
+    </script>
+    
+</body>
+</html>
