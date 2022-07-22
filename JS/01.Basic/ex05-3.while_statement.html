@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // RANDOME GAME!!!
+        // 1. 랜덤한 수를 하나 뽑아준다.
+        // Math.random : 0 ~ 1 범위 내의 랜덤한 숫자를 반환
+        // Math.random()*100 : 0 ~ 99.xxx 사이의 랜덤한 숫자(실수) 반환
+        // Math.random()*100 + 1 : 1 ~ 100.xxx 범위의 랜덤한 숫자(실수) 반환
+        // 형변환을 통해 1 ~ 100 범위의 랜덤한 정수를 반환
+        
+        let answer = parseInt((Math.random()*100)+1);
+        console.warn('정답 컨닝 금지!!! :', answer);
+
+        // 2. 사용자한테 숫자를 입력 받아 준다.
+
+        // 3. 랜덤 게임 제작
+        // 조건 
+        // 입력 숫자 > 랜덤 숫자 : 팝업 창 '입력한 숫자보다 작은 수 입니다.'
+        // 입력 숫자 < 랜덤 숫자 : 팝업창 '입력한 숫자보다 큰 수입니다.'
+        // 숫자 = 랜덤 '정답입니다. 축하합니다!'
+        
+        // ** 내가 쓴 주석**
+        // ** 반복문 실행 **
+        while(true){
+            // ** 숫자 값 입력 받아 변수에 넣기**
+            let num = Number(prompt('숫자를 맞춰보세요.'));
+            // ** 정답이 입력값보다 작으면,
+            if(num > answer) {
+                // **  팝업창 '입력한 숫자보다 작은 수 입니다.' 띄우기
+                alert('입력한 숫자보다 작은 수 입니다.');
+            // ** 정답이 입력값보다 크면,
+            }else if(num < answer){
+                // **  팝업창 '입력한 숫자보다 큰 수 입니다.' 띄우기
+                alert('입력한 숫자보다 큰 수 입니다.');
+            // ** 입력값이 정답이면,
+            }else if (num == answer) {
+                // ** 팝업창 '정답입니다. 축하합니다!' 띄우기
+                alert('정답입니다. 축하합니다!');
+                // ** 반복문 종료
+                break;
+            // ** 숫자 외의 값을 입력하면,
+            }else{
+                // ** 팝업창 '잘못 입력하셨습니다.' 띄우기
+                alert('잘못 입력하셨습니다.')
+            }
+        }
+        
+    </script>
+</body>
+</html>

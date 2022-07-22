@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <img src="img/operater.png">
+    <script>
+        // 연산자 실습
+        // 변수 num값 중에서 백의 자리 이하를 버리는 코드이다.
+        // 만일 변수 num의 값이 456이라면 400이 되고, 111이라면 100이 된다.
+        
+        // Case 1. 나누기 연산자를 이용한 풀이
+        // let num1 = prompt('3자리 이상 숫자 입력해봐!1');
+        // let remain = num1 % 100;
+        // let result1 = num1 - remain;
+        // console.log('백의 자리 이하 버린 결과>>',result1)
+        // document.write("<br><h1>"+num1+'의 백의 자리 이하 버린 결과>>',result1,"</h1>")
+    
+        // Case 2. 형변환 연산자를 이용한 풀이
+        let num2 = prompt('3자리 이상 숫자 입력해봐2');
+        let result2 = parseInt(num2 / 100)*100;
+        console.log('백의 자리 이하 버린 결과>>',result2)
+        document.write("<br><h1>"+num2+'의 백의 자리 이하 버린 결과>>',result2,"</h1>")
+
+        // Case 3. 문자열 자르기를 이용한 풀이
+        // let num3 = prompt('3자리 이상 숫자 입력해봐!3');
+        // let result3 = Number(num3.slice(0,-2)+'00');
+        // console.log('백의 자리 이하 버린 결과>>',result3);
+        // document.write("<br><h1>"+num3+'의 백의 자리 이하 버린 결과>>',result3,"</h1>");
+    </script>
+</body>
+</html>

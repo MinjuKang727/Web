@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 1. 시작 숫자와 마지막 숫자를 사용자에게 입력받는다.
+        let start_num = Number(prompt('시작 숫자를 입력하세요.'));
+        let end_num = Number(prompt('마지막 숫자를 입력하세요.'));
+
+        // 2. 시작 숫자 ~ 마지막 숫자까지 합
+        //(이 때, 마지막 숫자까지 포함해서 합산)
+        let sum = 0;
+        for (let num = start_num; num <= end_num; num++){
+            sum += num;
+        }
+        console.log(start_num+'부터 '+end_num+'까지의 합은 '+sum+'(이)다.')
+        alert(start_num+'부터 '+end_num+'까지의 합은 '+sum+'(이)다.');
+        
+    </script>
+</body>
+</html>

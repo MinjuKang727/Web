@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./ex06.JS_External_method.js"></script>
+</head>
+<body>
+
+    <!--
+    <<<<< javascript 작성 방법 >>>>>
+
+    1. 내부 : 한 페이지 안에서 보기 편하기 때문에 수업할 때만 사용
+    2. 외부 : 현업에서 대부분 외부 방식 사용
+    3. 인라인 : 정말 급할 때, 태그 안에 작성
+     -->
+    <!-- 내부 방식
+    head 혹은 body 영역에 script 태그를 작성해서
+    그 안에 JS 문법을 사용하는 방법 -->
+    <script></script>
+    <!-- 인라인 방식
+    태그 안에 직접 기능을 넣어줄 때 사용 -->
+    <button onmouseenter="alert('마우스 올림!');">마우스 올리기!</button>
+<!-- 바깥과 안쪽 quatation(따옴표)를 다르게 입력하기!! -->
+
+    <!-- 외부 방식
+    외부의 JS파일 안에 JS문법을 작성한 후 연결 
+    head 영역에 <script src=js파일경로></script>를 써 주어야 함-->
+    <button onclick="ck();">마우스 클릭!</button>
+</body>
+</html>
