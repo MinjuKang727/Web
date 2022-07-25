@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise-Function</title>
+</head>
+<body>
+    
+    <script>
+        // 1. 사용자에게 두 개의 숫자를 입력받아 줌
+        let num1 = Number(prompt('숫자1을 입력하세요.'));
+        let num2 = Number(prompt('숫자2를 입력하세요.'));
+        // 2. console 창에 덧셈, 뺄셈 곱셈, 나눗셈에 대한 결과 출력
+        // (3와 2의 덧셈 5)
+        function plus(num1, num2){
+            let plus_result = num1 + num2;
+            console.log(num1+'와 '+num2+'의 덧셈은? '+ plus_result);
+        };
+        plus(num1,num2);
+        // (3와 2의 뺄셈 1)
+        let minus = function(num1, num2){
+            if (num1 < num2) {
+                return num2 - num1;
+            }else {
+                return num1 - num2;
+            }
+            
+        }
+        console.log(`${num1}와 ${num2}의 뺄셈은? ${minus(num1,num2)}`);
+        
+        // (3와 2의 곱셈 6)
+        let multi = (num1,num2) => {
+            let multi_result = num1 * num2;
+            console.log(num1+'와 '+num2+'의 곱셈은? '+ multi_result);
+        }
+        multi(num1,num2);
+        // (3와 2의 나눗셈 1.5)
+        let div = (num1, num2) => {
+            let div_reulst = num1 > num2 ? (num1 / num2) : (num2 / num1)
+            console.log(num1+'와 '+num2+'의 곱셈은? '+ div_reulst);
+        };
+        div(num1,num2);
+        // 단, 4개의 함수를 만들 것
+        // plus(), minus(), multi(), div()
+        // 만약, 첫번째 숫자가 더 작다면 두번째 숫자~, / 첫번째 숫자
+
+    </script>
+</body>
+</html>

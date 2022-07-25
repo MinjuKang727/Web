@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // (1) 과목 수 입력
+        let n = parseInt(prompt('과목 수 입력하세요.'));
+        let subject_li = [];
+        let score_li = [];
+        // (2) 과목 수만큼 과목 이름을 입력할 수 있는 입력창
+        for (let i = 0; i < n; i++){
+            subject_li.push(prompt('과목 이름을 입력하세요.'));
+        }
+
+        // (3) 각 과목들의 점수를 입력할 수 있는 입력창
+        subject_li.forEach(function(subject){
+            score_li.push(Number(prompt(`${subject}의 점수를 입력하세요.`)));
+        })
+
+        subject_li.push('총점');
+        subject_li.push('평균');
+        // (4) 각 과목들의 점수, 총점, 평균 점수 도출
+        let total = 0;
+        for (let i = 0; i < n; i++){
+            total += score_li[i];
+        }
+        score_li.push(total);
+        score_li.push(total/n);
+
+        // (5) 각 점수, 총합, 평균을 HTML 문서 내에 테이블로 출력
+        // for (let i = 0; i < n + 2; i++){
+        //     document.write(subject_li[i]+'\t');
+        // }
+        // document.write('<br>');
+        // for (let i = 0; i < n + 2; i++){
+        //     document.write(score_li[i]+'\t');
+        // }
+        document.write('<table><tr>');
+
+        for (let i = 0; i < n + 2; i++){
+            document.write('<th>'+subject_li[i]+'</th>');
+        }
+        document.write('</tr><tr>');
+
+        for (let i = 0; i < n + 2; i++){
+            document.write('<td>'+score_li[i]+'</td>');
+        }
+        document.write('</tr></table>');
+        // 내가 HTML 문서 내에 적고싶을땐? document.write()
+    </script>
+
+</body>
+</html>
