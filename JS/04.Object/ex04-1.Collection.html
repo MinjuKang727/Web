@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection</title>
+</head>
+<body>
+    <input id="input" type="text">
+    <button id='add' onclick="addList()">리스트 추가</button>
+    <button id="del" onclick="delList()">리스트 삭제</button>
+    <ul>
+        <li>HTML</li><input type="checkbox" class="delck" style="display:none;">
+        <li>CSS</li><input type="checkbox" class="delck" style="display:none;">
+        <li>JS</li><input type="checkbox" class="delck" style="display:none;">
+    </ul>
+
+    <script>
+        let li = document.getElementsByTagName('li');
+        console.log(li); // HTML Collection 형태 (유사 배열)
+        // 태그 이름, 클래스 이름을 사용해서 
+        // HTML 요소를 가지고 올 때는
+        // 배열과 같은 형태로 사용한다.
+
+        for (let i = 0; i < li.length; i++){
+            console.log(`인덱스 번호 ${i} : ${li[i].innerText}`);
+            li[i].innerText = 'hi'
+        }
+
+        let addList = () => {
+            let ul = document.getElementsByTagName('ul')[0];
+            let input = document.getElementById('input');
+            ul.innerHTML += '<li>'+input.value+'</li><input type="checkbox" class="delck" style="display:none;">'
+            input.innerText = '';
+        }
+
+        let delList = () => {
+            let btn = document.getElementById('del');
+            let ckbox = document.getElementsByClassName('delck');
+            if (btn.innerText == '삭제'){
+                
+                for (let i=0; i< ckbox.length; i++){
+                    ckbox[i].style.display = 'block';
+                }
+                btn.innerText = '선택항목 모두 삭제'
+            }else{
+
+                for (let i=0; i< ckbox.length; i++){
+                    ckbox[i].style.display = 'none';
+                }
+                btn.innerText = '삭제'
+            }
+        }
+    </script>
+</body>
+</html>

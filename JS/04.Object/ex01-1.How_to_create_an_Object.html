@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How To Create An Object</title>
+</head>
+<body>
+    <script>
+        // 객체(Object)
+        // 여러 개의 데이터를 속성 & 값 저장
+        // {} : 객체를 감쌀 때 사용
+
+        // 1. 객체 저장
+        let person = {
+            name : '강민주',
+            subject : 'IoT',
+            intro : function(){
+                console.log('안녕하세요. 강민주입니다.')
+            }// 객체 안에 함수 쓸 때 화살표 함수 사용X
+
+        }
+        console.log(person);
+        // ** 객체 내에 객체 저장
+
+        let IoTClass = {
+            cyk : {
+                name : '최윤규'
+            },
+            mjh : {
+                name : '문지환'
+            }
+        }
+
+        console.log('객체 내 객체 데이터에 접근 : '+IoTClass.mjh.name)
+        // 2. .(dot) 기호 : 객체 내 데이터 접근할 때 사용
+        // 객체 이름, 속성 이름
+        console.log('person 객체의 name 속성 : '+person.name);
+        person.intro();
+        // 함수 속성은 소괄호를 붙여서 쓴다.
+
+
+    </script>
+</body>
+</html>

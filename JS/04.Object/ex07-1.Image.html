@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img 
+        src = 'https://t1.daumcdn.net/liveboard/bloter/6bf54bfdea5d4a609fa108f914bc8e13.jpg'
+        width = "300px"
+        id = "img1"
+    >
+    <button onclick="getPikachu()" id="btn">포켓볼 꺼내기!</button>
+    <script>
+        let enter = 'https://t1.daumcdn.net/liveboard/bloter/6bf54bfdea5d4a609fa108f914bc8e13.jpg';
+        let getBall = 'https://t1.daumcdn.net/cfile/tistory/9987BD375C17DFFF02';
+        let getPika = 'https://t1.daumcdn.net/liveboard/bloter/dd4e7875799d48e3b63863c2651b58d1.jpg';
+        let myPika = 'https://w.namu.la/s/6a4eb97046aa4ddcf785d45a9fd8aa40219e11777600741a5bbafb99c4831d6229c9da5ec335288d64accf0eda39cee475bc163fdfa13620031e6465c6d256d7a83807a3860348342ce89d4bf5b82f62c45d88de99ff74ac8eedaa24ea59c75a';
+        let jioo = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-HjKDXBXUR_myVijK9e9ioyAKUx8bu6BtZSXQGzMg70_S1x8X5IVm2aYBf0NRf_f96Io&usqp=CAU';
+        let img = document.getElementById('img1');
+        let btn = document.getElementById('btn');
+
+        let getPikachu = () => {
+            if (btn.innerText == '포켓볼 꺼내기!'){
+                img.src = getBall;
+                btn.innerText = '포켓볼 던지기!';
+            }else if (btn.innerText == '포켓볼 던지기!'){
+                img.src = getPika;
+                btn.innerText = '나와라 피카츄!';
+            }else if (btn.innerText == '나와라 피카츄!') {
+                img.src = myPika;
+                btn.innerText = '피카츄 들어와!';
+            }else if (btn.innerText == '피카츄 들어와!'){
+                img.src = jioo;
+                btn.innerText = '나와라 피카츄!';
+            }
+        }
+
+    </script>
+</body>
+</html>

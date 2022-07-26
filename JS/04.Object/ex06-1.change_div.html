@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Div</title>
+
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        #redBox{
+            background-color: red;
+        }
+        #blueBox{
+            background-color: blue;
+        }
+        #greenBox{
+            background-color: green;
+        }
+        #grayBox{
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="redBox"></div>
+    <div id="blueBox"></div>
+    <div id="greenBox"></div>
+    <div id="grayBox"></div>
+    <button onclick="margin()">이동하기!</button>
+    <button onclick="radius()">둥글게!</button>
+
+    <script>
+        let div = document.getElementsByTagName('div');
+        // Ver1. ID를 이용하기
+        // 1. margin 이라는 함수 생성
+        let margin = () => {
+            let btn = document.getElementsByTagName('button')[0];
+            if (btn.innerText == '이동하기!'){
+                for(let i = 0; i < div.length; i++){
+                    div[i].style.marginLeft = i*100+'px'; // 단위('px')를 빠뜨리지 말자!!
+                };
+                btn.innerText = '원래대로!';
+            }else {
+                for(let i = 0; i < div.length; i++){
+                    div[i].style.marginLeft = 0+'px';
+                };
+                btn.innerText = '이동하기!';
+            };
+        };
+        // 2. radius 라는 함수를 생성
+        let radius = () => {
+            let btn = document.getElementsByTagName('button')[1];
+            
+            if (btn.innerText == '둥글게!'){
+                for(let i = 0; i < div.length; i++){
+                    //  1-1 border-top-right-radius => 50%
+                    //  1-2 border-bottom-left-radius => 50%
+                    // 이 때, JS 의 영역에서 CSS 속성을 적고싶다면
+                    // Camel Case로 적을것
+                    // (일반) border-top-right-radius
+                    // (Camel) borderTopRightRadius
+                    div[i].style.borderTopRightRadius = '50%';
+                    div[i].style.borderBottomLeftRadius = '50%';
+                };
+                btn.innerText = '각지게!';
+            }else {
+                for(let i = 0; i < div.length; i++){
+                    div[i].style.borderTopRightRadius = '0%';
+                    div[i].style.borderBottomLeftRadius = '0%';
+                };
+                btn.innerText = '둥글게!';
+            };
+        
+        }
+        
+
+        // Ver2. TagName을 이용하기
+    </script>
+</body>
+</html>

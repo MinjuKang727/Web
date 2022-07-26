@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="span1">0</span>
+    <br>
+    <button onclick="plus()">+1 증가</button>
+    <button onclick="minus()">-1 감소</button>
+    <script>
+        // 1. plus 함수 생성
+        
+        let plus = () =>{
+            //  1-1. 아이디가 span1인 span 태그의 요소를
+            // JS의 영역으로 가지고 올것
+            let spanTag = document.getElementById('span1');
+
+            //  1-2. 요소 안의 텍스트만 1씩 증가
+            //  ** 단, 현재 0이라는 글자는 string 형이다.
+            let spanNum = parseInt(spanTag.innerText);
+            spanTag.innerText =  ++spanNum; // spanNum + 1 (spanNum++는 안됨: 1 안 더해진 값을 반환)
+        }
+        
+        // 2. minus 함수 생성
+        let minus = () => {
+            //  2-1. 아이디가 span1인 span 태그의 요소를
+            // JS의 영역으로 가지고 올것
+            let spanTag = document.getElementById('span1');
+            //  2-2. 요소 안의 텍스트만 1씩 감소
+            //  2-3. 0 밑으로는 더이상 감소 X
+            let spanNum = parseInt(spanTag.innerText);
+            if (spanNum > 0) {
+                spanTag.innerText = spanNum - 1;
+            }
+        }
+       
+        // 결과창 3을 띄운 모습을 캡쳐해서 단톡방
+    </script>
+</body>
+</html>

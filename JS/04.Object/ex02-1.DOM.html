@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="text">Hello, World!</p>
+    <button onclick="getall()">See Tag & content</button>
+    <button onclick="innerFunc()">Get content</button>
+    <button onclick="changeInnerText()">change content</button>
+    <button onclick="changeTag()">change Tag</button>
+    <button onclick="reset()">Reset</button>
+    <script>
+        // DOM (Document Object Model) : 트리 구조
+        // - HTML 문서 쪼개서 객체화 => JS 영역으로 조정
+        // ★★ HTML 문서 내에 최상위 객체 => "document" 객체 ★★
+        // 내가 만약 JS 의 영역에서 HTML 문서를 손대고 싶다면? document 접근
+        let getall = () =>{
+            let pTag = document.getElementById('text');
+            console.log(pTag);
+        }
+
+        let innerFunc = ()=>{
+            let pTag = document.getElementById('text');
+            // 요소 = 태그 + 컨텐츠
+
+            //요소 안의 내용만 수정 or 접근?  >> .innerText
+
+            //(1) 접근
+            console.log(pTag.innerText);
+        }
+        let changeInnerText = () => {
+            let pTag = document.getElementById('text');
+            //(2) 수정
+            pTag.innerText = 'Bye World!'  // >> 태그는 변경 안됨(태그를 쓰면 문자로 나옴)
+        }
+        let changeTag = () => {
+            let pTag = document.getElementById('text');
+            //(3) 태그까지 적용시키고 싶을 때는? .innerHTML
+            pTag.outerHTML='<h1 id="text">안녕하세요</h1>';
+        }
+
+        let reset = () => {
+            let pTag = document.getElementById('text');
+            pTag.outerHTML='<p id="text">Hello World!</p>';
+        }
+    </script>
+</body>
+</html>
