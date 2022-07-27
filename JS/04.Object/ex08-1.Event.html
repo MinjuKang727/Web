@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn">클릭!</button>
+    
+    <!-- 클릭2 버튼을 눌렀을 때, console 창에 '클릭2 실행!'이라고 띄워줄 것 
+        단, 두번 뜨지 않게 할것 & 위쪽 클릭 버튼을 눌렀을 떼 console에 아무것도 뜨지 않게 할 것
+       또한 HTML 문서는 손대지말 것
+    -->
+    <p>
+        <button class="btn">클릭2</button>
+    </p>
+    <script>
+        // 콜백 함수 : 함수 안에 함수가 있는 형태
+        // 1. 어떤 이벤트가 발생했거나, 특정 시점에 도달했을 때
+        // 내가 아닌, 시스템에서 호출해주는 함수
+        // 2. 함수 파라미터 안에 들어가는 함수
+
+        // 이벤트 핸들러 & 리스터
+        // 어떤 이벤트가 발생했을 때, 특정 함수를 실행해주는 구문
+        // addEventListener(이벤트, 함수) : 매개변수로 넣은 이벤트가 발생하는지 듣고 있겠다.
+        // 만약 이벤트가 발생하면 함수를 실행 시키겠다.
+        document.querySelector('.btn').addEventListener('click', function(){
+            console.log('클릭되었습니다.')
+        })
+
+        
+    </script>
+</body>
+</html>
