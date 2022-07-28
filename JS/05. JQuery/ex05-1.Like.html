@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button id='like'>좋아요</button><span id="like_n">0</span>
+    <br>
+    <input type="text"><button class='writeCom'>댓글작성</button><button id="checkCom">댓글삭제</button>
+    <br>
+    <div id="com">
+        <span><input type="checkbox" style="display:none;"><p style="display:inline;">첫댓글</p></span>
+    </div>
+
+    <script>
+        // 1,2 >> on('click')사용
+        // 1. '좋아요' 버튼을 눌렀을 때, / 
+        $(document).on('click','#like',function(){
+            // 좋아요 >> 좋아요 취소
+            $(this).text('좋아요 취소');
+            // 좋아요 수 : 0 >> 1 
+            $('#like_n').text('1');
+            // id : like >> dislike
+            $(this).attr('id','dislike');
+
+        });
+
+        // 2. '좋아요 취소' 버튼을 눌렀을 때, 
+        $(document).on('click','#dislike',function(){
+            // 좋아요 취소 >> 좋아요
+            $(this).text('좋아요');
+            // 좋아요 수 : 1 >> 0 
+            $('#like_n').text('0');
+            //  id : dislike >> like
+            $(this).attr('id','like');
+        });
+
+        // 3. 댓글을 작성
+        $('.writeCom').click(()=>{
+            let content = $('input').val();
+            console.log(content);
+            if ( content != ''){
+                // 내가 적은 댓글 + 삭제 버튼
+                $('div').append(`<span><input type="checkbox" style="display:none;"><p>${content}<button class='removeCom'>삭제</button></p></span>`);
+                // 댓글을 작성한 후, >> input창은 비워줄 것!
+                $('input').val('');
+            }
+        })
+        // $(document).on('click','p >.removeCom',function(){
+        //     $(this).parent().remove();
+        // });
+        
+        // 삭제 버튼 >> 내가 삭제한 '그 댓글'만 지워줄 것!
+
+        $(document).on('click','#checkCom',function(){
+            $('input[type=checkbox]').css('display','inline');
+            $(this).removeAttr('id');
+            $(this).attr('id','delCom');
+            $(this).text('선택댓글삭제');
+        });
+
+        $('#delCom').on('click','#delCom',function(){
+            $('span > input[type=checkbox]').forEach(element => {
+                if(element.val() == True){
+                    element.parent().remove();
+                }
+            });
+            $('input[type=checkbox]').css('display','none');
+            $(this).removeAttr('id');
+            $(this).attr('id','checkCom');
+            $(this).text('댓글삭제');
+        });
+    </script>
+</body>
+</html>

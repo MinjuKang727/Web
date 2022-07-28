@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width : 200px;
+            height : 200px;
+        }
+        .greenClass{
+            border : 5px solid greenyellow;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzt9Cp0nwGbmZ5oJL-7kNLOYZj0CaVDjMRg1fkE1J9hmamauhlMjeTXxEqAqeMJNVZwhU&usqp=CAU" id="img1">
+    </div>
+    <button id="btn1">div내부 앞에 추가</button>
+    <button id="btn2">div내부 뒤에 추가</button>
+    <button id="btn3">div외부 앞에 추가</button>
+    <button id="btn4">img 1개 삭제</button>
+    <button id="btn5">div 안 비우기</button>
+    <button id="btn6">class 추가</button>
+    <button id="btn7">class 삭제</button>
+    <button id="btn8">부모요소 접근</button>
+
+    <script>
+        // 1. 요소의 내부 앞에 추가
+        $('#btn1').click(()=>{
+            // .prepend() : 요소의 내부 앞쪽에 추가하는 함수
+            $('div').prepend('<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-peBQABFJKQaI2dIpK8jyzozspoNa0lsVmHK4QVUMGv5bj4y5G_evkqfPUNYDaX7rL_Y&usqp=CAU">');
+        })
+
+        // 2. 요소의 내부 뒤에 추가
+        $('#btn2').click(()=>{
+            // .append() : 요소의 내부 뒷쪽에 추가하는 함수
+            $('div').append('<img src="https://obj.thewiki.kr/thecloud/temp/76616868657470736a662e6a7067.jpg">');
+        })
+
+        // 3. 요소의 외부 앞에 추가
+        $('#btn3').click(()=>{
+            // .before() : 요소의 외부 앞쪽에 추가하는 함수
+            $('div').before('<button id="newBtn">새로 생긴 버튼</button>')
+        })
+
+        // .click vs .on('click')
+        // 동적 이벤트 바인딩 차이 //... 처음 html 소스를 받았을 때, 있었는가? 없었는가?
+        // .click : 최초의 페이지를 로딩할 때 선언되어있던 
+                // 요소들에 이벤트를 바인딩 그 이후 더 이상 바인딩 하지 않음
+        // .on('click') : 동적으로 추가된 태그 이벤트 바인딩
+    // 처음 문서에 있던 이벤트 : .click() 사용!
+    // 새로 추가된 이벤트 : .on('click') 사용!
+    //....처음 문서에 없었으면 click 이벤트 인식X >> .on('click') : 문서를 처음부터 다시 읽음
+        // $('#newBtn').click(()=>{
+        //     alert('클릭!')
+        // })
+        $(document).on('click', '#newBtn',()=>{
+            // 4. 요소의 외부 뒤쪽에 추가
+            $('div').after('<p>div 외부 뒤에 추가!</p>');
+        });
+
+        
+        // 4. 요소 지우기
+        $('#btn4').click(()=>{
+            //$('#img1').remove();
+            let last = $('img').length - 1;
+            $('img')[last].remove();
+        });
+        
+        // 5. 요소 비우기
+        $('#btn5').click(()=>{
+            //$('div > img').remove();
+            $('div').empty()
+        });
+
+        // 7. Class 추가 addClass()
+        // 한번에 클래스를 설정 해 주어 css 변경 가능
+        $('#btn6').click(()=>{
+            $('img').addClass('greenClass');
+        });
+
+        // 8. Class 삭제 removeClass()
+        $('#btn7').click(()=>{
+            $('img').removeClass('greenClass');
+        });
+
+        // 9. 부모 요소 삭제
+        $('#btn8').click(()=>{
+            $('div > img').parent().remove();
+        });
+    </script>
+</body>
+</html>
