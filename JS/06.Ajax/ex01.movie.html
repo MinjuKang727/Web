@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button onclick="data()">요청!</button>
+    <script>
+        let data = () => {
+            //JQuery를 통해 ajax 방식으로 데이터를 요청
+            // url : 우리가 가져온 url
+            // 
+            $.ajax({
+                // ctrl+url 주소 클릭하면 링크 걸린 주소로 감
+                url : "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=c0493138a382ce7abcf57b797bed9e88&targetDt=20220601",
+                // 전송방식: get 또는 post
+                type : "get",
+                // 데이터를 가져오는 데, 성공했다면 다음 함수를 실행
+                success : function(res){
+                    // 영화 1 ~ 10위 까지
+                    // 1위. 범죄 도시2
+                    // 2위. 어쩌고 저쩌고
+                    // console창에 출력
+                    let week10 = res.boxOfficeResult.weeklyBoxOfficeList;
+                    week10.forEach(element => {
+                        console.log(element.rank+'위. '+element.movieNm)
+                    });
+
+                    // 선생님 코드
+                    // for(let i=0; i < 10; i++){
+                    //     console.log(res.boxOfficeResult.weeklyBoxOfficeList[i].rank+'위. ');
+                    //     console.log(res.boxOfficeResult.weeklyBoxOfficeList[i].movieNm);
+                    // }
+                },
+                // 실패했다면 다음 함수를 실행
+                error : function(){
+                    alert('실패!');
+                }
+
+            })
+        }
+    </script>
+</body>
+</html>
